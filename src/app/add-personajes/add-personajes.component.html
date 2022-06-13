@@ -1,0 +1,47 @@
+<div>
+  <div class="submit-form">
+    <div *ngIf="!submitted">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" class="form-control" id="name" required [(ngModel)] = "Personajes.name" name="name">
+      </div>
+
+      <div class="form-group">
+        <label for="status">Status</label>
+        <input type="text" class="form-control" id="status" required [(ngModel)] = "Personajes.status" name="status">
+      </div>
+
+      <div class="form-group">
+        <label for="species">Species</label>
+        <input type="text" class="form-control" id="species" required [(ngModel)] = "Personajes.species" name="species">
+      </div>
+
+      <div class="form-group">
+        <label for="gender">Gender</label>
+        <input type="text" class="form-control" id="gender" required [(ngModel)] = "Personajes.gender" name="gender">
+      </div>
+
+      <div class="form-group">
+        <label for="origin">Origin</label>
+        <input type="text" class="form-control" id="origin" required [(ngModel)] = "Personajes.origin" name="origin">
+      </div>
+
+      <div class="form-group">
+        <label for="location">Location</label>
+        <input type="text" class="form-control" id="location" required [(ngModel)] = "Personajes.location" name="location">
+      </div>
+
+      <div class="form-group">
+        <label for="image">Image</label>
+        <input type="text" class="form-control" id="image" required [(ngModel)] = "Personajes.image" name="image">
+      </div>
+
+      <button (click)="savePersonaje()" class="btn btn-success">Submit</button>
+    </div>
+
+    <div *ngIf="submitted">
+        <h4>Tutorial was submitted successfully!</h4>
+        <button class="btn btn-success" (click)="newPersonaje()">Add</button>
+    </div>
+  </div>
+</div>

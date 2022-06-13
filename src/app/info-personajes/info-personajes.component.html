@@ -1,0 +1,53 @@
+<div>
+  <div *ngIf="currentPersonajes.id" class="edit-force">
+    <h4>Personaje</h4>
+    <form>
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" class="form-control" id="name" [(ngModel)]="currentPersonajes.name" name="name">
+      </div>
+
+      <div class="form-group">
+        <label for="status">Status</label>
+        <input type="text" class="form-control" id="status" [(ngModel)]="currentPersonajes.status" name="status">
+      </div>
+
+      <div class="form-group">
+        <label for="species">Species</label>
+        <input type="text" class="form-control" id="species" [(ngModel)]="currentPersonajes.species" name="species">
+      </div>
+
+      <div class="form-group">
+        <label for="gender">Gender</label>
+        <input type="text" class="form-control" id="gender" [(ngModel)]="currentPersonajes.gender" name="gender">
+      </div>
+
+      <div class="form-group">
+        <label for="origin">Origin</label>
+        <input type="text" class="form-control" id="origin" [(ngModel)]="currentPersonajes.origin" name="origin">
+      </div>
+
+      <div class="form-group">
+        <label for="location">Location</label>
+        <input type="text" class="form-control" id="location" [(ngModel)]="currentPersonajes.location" name="location">
+      </div>
+
+      <div class="form-group">
+        <label for="image">Image</label>
+        <input type="text" class="form-control" id="image" [(ngModel)]="currentPersonajes.image" name="image">
+      </div>
+    </form>
+
+    <button class="badge badge-primary mr-2" *ngIf="currentPersonajes.published" (click)="updatePublished(false)">UnPublish</button>
+    <button class="badge badge-primary mr-2" *ngIf="currentPersonajes.published" (click)="updatePublished(true)">Publish</button>
+
+    <button class="badge badge-primary mr-2" (click)="deletePersonajes()">Delete</button>
+    <button type="submit" class="badge badge-success mb-2" (click)="updatePersonajes()">Update</button>
+    <p>({message})</p>
+  </div>
+
+  <div *ngIf="!currentPersonajes.id">
+  </br>
+  <p>Cannot access this Personaje...</p>
+  </div>
+</div>
